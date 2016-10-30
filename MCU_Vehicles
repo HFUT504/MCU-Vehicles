@@ -1,0 +1,58 @@
+int leftBack1 = 30;
+int leftBack2 = 31;
+int leftBackSpeed = 2;
+int leftFront1 = 32;
+int leftFront2 = 33;
+int leftFrontSpeed = 3;
+int rightBack1 = 34;
+int rightBack2 = 35;
+int rightBackSpeed = 4;
+int rightFront1 = 36;
+int rightFront2 = 37;
+int rightFrontSpeed = 5;
+int track1 = 38;
+int track2 = 39;
+int track3 = 40;
+int track4 =41;
+int leftSpeedDec = 42;
+int rightSpeedDec = 43;
+void setup(){
+  for (int pindex = 30;pindex < 38;pindex ++) {
+    pinMode(pindex, OUTPUT);
+  }
+  for (int pindex = 2;pindex < 6;pindex ++) {
+    pinMode(pindex, OUTPUT);
+  }
+  for (int pindex = 38;pindex < 44;pindex ++) {
+    pinMode(pindex, OUTPUT);
+  }
+}
+void goBackward(){
+  for (int pindex = 30;pindex < 37;pindex=pindex + 2) {
+    digitalWrite(pindex, LOW);
+  }
+  
+  for (int pindex = 31;pindex < 38;pindex=pindex + 2) {
+    digitalWrite(pindex,HIGH);
+  }
+  for (int pindex = 8;pindex < 12; pindex ++) {
+    analogWrite(pindex,255);
+  }
+}
+void goForward(){
+  for (int pindex = 30;pindex < 37;pindex=pindex + 2) {
+    digitalWrite(pindex, HIGH);
+  }
+  
+  for (int pindex = 31;pindex < 38;pindex=pindex + 2) {
+    digitalWrite(pindex,LOW);
+  }
+  for (int pindex = 8;pindex < 12; pindex ++) {
+    analogWrite(pindex,100);
+  }
+}
+void loop(){
+  goForward(); 
+  
+}
+
